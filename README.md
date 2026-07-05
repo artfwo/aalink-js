@@ -1,7 +1,7 @@
 # aalink-js
 
 aalink-js is a JavaScript port of [aalink](https://github.com/artfwo/aalink),
-async interface for Ableton Link built for interactive multimedia
+async interface for Ableton Link, built for interactive multimedia
 applications running in Node.js.
 
 It provides a simple programming interface for writing concurrent JavaScript
@@ -41,8 +41,8 @@ at beat 12.
 Non-integral beat syncing is supported. For example:
 
 ```js
-await link.sync(1 / 2); // resumes at beats 0.5, 1, 1.5...
-await link.sync(3 / 2); // resumes at beats 1.5, 3, 4.5...
+await link.sync(1/2); // resumes at beats 0.5, 1, 1.5...
+await link.sync(3/2); // resumes at beats 1.5, 3, 4.5...
 ```
 
 Sync events can be scheduled with an offset (also expressed in beats) by
@@ -54,10 +54,10 @@ async function arpeggiate() {
     for (let i = 0; i < 16; i++) {
         const swing = i % 2 === 1 ? 0.25 : 0;
 
-        await link.sync(1 / 2, swing);
+        await link.sync(1/2, swing);
         console.log('###', i);
 
-        await link.sync(1 / 2, 0);
+        await link.sync(1/2, 0);
         console.log('@@@', i);
     }
 }
