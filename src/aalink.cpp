@@ -1,5 +1,3 @@
-#include <napi.h>
-
 #include <algorithm>
 #include <atomic>
 #include <chrono>
@@ -8,6 +6,7 @@
 #include <list>
 #include <memory>
 #include <mutex>
+#include <napi.h>
 #include <thread>
 
 #include <ableton/Link.hpp>
@@ -58,6 +57,7 @@ static double next_link_beat(double current_beat, double sync_beat, double offse
 class Link : public Napi::ObjectWrap<Link> {
 public:
     static Napi::Object Init(Napi::Env env, Napi::Object exports) {
+        // clang-format off
         Napi::Function func = DefineClass(env, "Link", {
             InstanceAccessor<&Link::num_peers>("numPeers"),
             InstanceAccessor<&Link::beat>("beat"),
@@ -77,6 +77,7 @@ public:
             InstanceMethod<&Link::set_start_stop_callback>("_setStartStopCallback"),
             InstanceMethod<&Link::sync>("sync"),
         });
+        // clang-format on
 
         exports.Set("Link", func);
         return exports;
