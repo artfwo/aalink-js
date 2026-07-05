@@ -1,0 +1,44 @@
+{
+    "name": "aalink",
+    "version": "0.0.1",
+    "description": "Async JavaScript interface for Ableton Link",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "scripts": {
+        "build": "node-gyp build"
+    },
+    "keywords": [
+        "ableton-link",
+        "music",
+        "multimedia",
+        "creative-coding",
+        "algorithmic-composition"
+    ],
+    "author": "Artem Popov <art@artfwo.net>",
+    "license": "GPL-3.0-or-later",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/artfwo/aalink-js.git"
+    },
+    "homepage": "https://github.com/artfwo/aalink-js",
+    "bugs": {
+        "url": "https://github.com/artfwo/aalink-js/issues"
+    },
+    "dependencies": {
+        "bindings": "^1.5.0",
+        "node-addon-api": "^8.3.0"
+    },
+    "devDependencies": {
+        "midi": "^2.0.0"
+    },
+    "files": [
+        "binding.gyp",
+        "src",
+        "ext",
+        "index.js",
+        "index.d.ts"
+    ],
+    "engines": {
+        "node": ">=18"
+    }
+}
