@@ -31,10 +31,18 @@
                         "NOMINMAX"
                     ],
                     "libraries": ["ws2_32.lib", "iphlpapi.lib"],
+                    # strip clang LTO flags leaked by Node >= 26 Windows headers
                     "msvs_settings": {
                         "VCCLCompilerTool": {
                             "ExceptionHandling": 1,
-                            "AdditionalOptions": ["/std:c++17"]
+                            "AdditionalOptions": ["/std:c++17"],
+                            "AdditionalOptions/": [["exclude", "flto"], ["exclude", "lldltojobs"]]
+                        },
+                        "VCLibrarianTool": {
+                            "AdditionalOptions/": [["exclude", "flto"], ["exclude", "lldltojobs"]]
+                        },
+                        "VCLinkerTool": {
+                            "AdditionalOptions/": [["exclude", "flto"], ["exclude", "lldltojobs"]]
                         }
                     }
                 }]
