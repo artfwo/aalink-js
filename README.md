@@ -16,7 +16,18 @@ and arpeggiators, polyrhythmic and phase music, beat-synced visuals and
 lighting, or tempo-aware parameter modulation - anything that runs to
 a beat and changes over time.
 
+## Installation
+
+```sh
+npm install aalink
+```
+
+aalink-js is compiled from source at install time and requires a C++ toolchain.
+
 ## Usage
+
+To connect to a Link session, create a `Link` object and await
+`link.sync()` as follows:
 
 ```js
 const { Link } = require('aalink');
