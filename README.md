@@ -1,20 +1,13 @@
 # aalink-js
 
 aalink-js is a JavaScript port of [aalink](https://github.com/artfwo/aalink),
-async interface for Ableton Link, built for interactive multimedia
+an async interface for Ableton Link, built for interactive multimedia
 applications running in Node.js.
 
-It provides a simple programming interface for writing concurrent JavaScript
-code synchronized to a beat. The beat can optionally be time-aligned with
-other Link-enabled apps and devices on the local network in an Ableton Link
-session.
-
 In aalink-js, beats arrive as awaitable promises rather than callbacks, so
-timing composes with ordinary control flow - loops, async functions,
-temporal recursion, etc. This makes it a good fit for generative sequencers
-and arpeggiators, polyrhythmic and phase music, beat-synced visuals and
-lighting, or tempo-aware parameter modulation - anything that runs to
-a beat and changes over time.
+timing composes with ordinary control flow - loops, async functions, temporal
+recursion. The beat can optionally sync with other Link apps and devices
+on the network.
 
 ## Installation
 
